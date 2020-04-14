@@ -62,8 +62,8 @@ class PreProcessing:
 	def loadVocab(self, split):
 
 		print "======================================================= loadData: split = ",split
-		inp_src = config.data_dir + split + ".original" + ".para" #".modern"
-		out_src = config.data_dir + split + ".modern" + ".para" #".original"
+		inp_src = config.data_dir + split + ".original" + ".nltktok" #".modern"
+		out_src = config.data_dir + split + ".modern" + ".nltktok" #".original"
 		inp_data = open(inp_src,"r").readlines()
 		out_data = open(out_src,"r").readlines()
 		
@@ -130,8 +130,8 @@ class PreProcessing:
 	def loadData(self, split):
 
 		print "======================================================= loadData: split = ",split
-		inp_src = config.data_dir + split + ".original" + ".para" #".modern"
-		out_src = config.data_dir + split + ".modern" + ".para" #".original"
+		inp_src = config.data_dir + split + ".original" + ".nltktok" #".modern"
+		out_src = config.data_dir + split + ".modern" + ".nltktok" #".original"
 		inp_data = open(inp_src,"r").readlines()
 		out_data = open(out_src,"r").readlines()
 		
