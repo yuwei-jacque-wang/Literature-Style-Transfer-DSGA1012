@@ -37,10 +37,8 @@ def main():
 	params = {}
 	params['embeddings_dim'] =  config.embeddings_dim
 	params['lstm_cell_size'] = config.lstm_cell_size
-	#params['max_input_seq_length'] = config.max_input_seq_length
-    params['max_input_seq_length'] = 128
-	#params['max_output_seq_length'] = config.max_output_seq_length-1 #inputs are all but last element, outputs are al but first element
-    params['max_output_seq_length'] = 128
+	params['max_input_seq_length'] = config.max_input_seq_length
+	params['max_output_seq_length'] = config.max_output_seq_length-1 #inputs are all but last element, outputs are al but first element
 	params['batch_size'] = config.batch_size
 	params['pretrained_embeddings'] = config.use_pretrained_embeddings
 	params['share_encoder_decoder_embeddings'] = config.share_encoder_decoder_embeddings
