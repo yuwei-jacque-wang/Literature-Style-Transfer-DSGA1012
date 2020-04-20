@@ -1,8 +1,8 @@
 data_dir = "../../data/"
 
 # preprocessing params
-max_input_seq_length = 48
-max_output_seq_length = 48
+max_input_seq_length = 32
+max_output_seq_length = 32
 #dropout_val = 0.2
 do_vocab_pruning = True
 max_vocab_size = 12000
