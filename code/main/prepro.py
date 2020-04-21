@@ -175,7 +175,7 @@ class PreProcessing:
 
 		print "Printing few sample sequences... "
 		print sequences_input[0],":", self.fromIdxSeqToVocabSeq(sequences_input[0]), "---", sequences_output[0], ":", self.fromIdxSeqToVocabSeq(sequences_output[0])
-		print sequences_input[113], sequences_output[113]
+		print sequences_input[73], sequences_output[73]
 		print "================================="
 
 		return sequences_input, sequences_output
