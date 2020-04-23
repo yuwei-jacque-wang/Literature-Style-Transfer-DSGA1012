@@ -2,7 +2,7 @@
 
 Most codes were imported and given credit to the work "Jhamtani H., Gangal V., Hovy E. and Nyberg E. Shakespearizing Modern Language Using Copy-Enriched Sequence to Sequence Models"  Workshop on Stylistic Variation, EMNLP 2017
 
-Link to original repository: [click here]https://github.com/harsh19/Shakespearizing-Modern-English
+Link to original repository: [click here](https://github.com/harsh19/Shakespearizing-Modern-English)
 
 ### Requirements
 - Python 2.7
