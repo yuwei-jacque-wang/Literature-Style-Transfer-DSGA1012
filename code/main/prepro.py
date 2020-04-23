@@ -118,7 +118,7 @@ class PreProcessing:
 			tmp_word_to_idx[token] = tmp_word_to_idx_ctr
 			tmp_idx_to_word[tmp_word_to_idx_ctr] = token
 			tmp_word_to_idx_ctr+=1
-		print "** ",tmp_idx_to_word[9947]
+		print "** ",tmp_idx_to_word[947]
 
 		self.word_to_idx = tmp_word_to_idx
 		self.idx_to_word = tmp_idx_to_word
