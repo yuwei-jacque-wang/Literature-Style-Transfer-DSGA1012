@@ -1,30 +1,33 @@
 # Literature Style Transfer
 
-Most codes were imported and given credit to the work "Jhamtani H., Gangal V., Hovy E. and Nyberg E. Shakespearizing Modern Language Using Copy-Enriched Sequence to Sequence Models"  Workshop on Stylistic Variation, EMNLP 2017
+# Text-style Transformation from 19th-Century Literature to Modern Language
 
-Link to original repository: [click here](https://github.com/harsh19/Shakespearizing-Modern-English)
+This is code implementation of the final project of DS-GA 1012:
+```
+Text-style Transformation from 19th-Century Literature to Modern Language
+Yuwei Wang, Tianshu Chu, Jiarui Tang, Chutang Luo
+```
+
+### Introduction
+In this work, we propose a Seq2Seq model by using Pointer Sentinel and pre-training embeddings with external text of PTB,which can effectively transform writing style of the literature the literature A Tale of Two Cities to modern English style.
+
 
 ### Requirements
 - Python 2.7
-- Tensorflow 1.1.0
+- Tensorflow 1.15.0
+
+
+### Data
+Our  dataset is a collection of sentences of the literature A Tale of Two Cities from the  educational site [Sparknotes](www.saparknotes.com). The source provides two versions of the text: the original literature written by Charles Dickens, and a plain translation with modern, easy-to-understand English. The original data can be accessed in ().
+
+
+### Preprocessing: 
+ We clean the data by removing blanks at end of paragraphs, deleting empty lines etc. We split the paragraphs into sentences, then filter paragraphs with different number of sentences in two versions of the text as well as sentence that exceeds certain length. The data after preprocessing can be accessed in ()
+
 
 ### Instructions to run:
 
-#### Preprocessing: 
-- Change working directory to code/main/
-- Create a new directory named 'tmp'
-- Run: </br>
-`python mt_main.py preprocessing` </br>
-
-#### Pointer model: 
-- First run pre-processing
-- Change working directory to code/main/
-- `python mt_main.py train 10 pointer_model` </br>
-For inference: </br>
-- Change working directory to code/main/
-- `python mt_main.py inference tmp/pointer_model7.ckpt greedy` </br>
-
-#### Normal seq2seq model: 
+#### Baseline model - Simple Seq2Seq: 
 - First run pre-processing
 - Change working directory to code/main/
 - Run: </br>
@@ -34,34 +37,30 @@ For inference: </br>
 - Run: </br>
 `python mt_main.py inference tmp/seq2seq5.ckpt greedy` </br>
 
-#### Post-Processing:
-There are two post-processing actions which one may be interested in performing:
-1. Visualizing attention matrices
-2. Replacing UNKS in hypothesis with their highest-aligned (attention) input tokens.
-For both of these actions, refer to the running instructions in code/main/post_process.py (comments commencing the file). The file can be run in two modes, to perform 1 (write) and 2 (postProcess) respectively*.
-*Not elaborated on here to preserve conciseness and clarity. </br>
-Note that the path to test file is hard-coded in the post_process.py file, so to try with a new file,one will have to make corresponding changes.
+
+#### Pointer model: 
+- First run pre-processing
+- Change working directory to code/main/
+- `python mt_main.py train 10 pointer_model` </br>
+For inference: </br>
+- Change working directory to code/main/
+- `python mt_main.py inference tmp/pointer_model7.ckpt greedy` </br>
 
 
-#### Baseline (Dictionary):
-- Change working directory to code/baselines/
-- Run: </br>
-`python dictionary_baseline.py ../../data/shakespeare.dict ../../data/test.modern.nltktok ../../data/test.dictBaseline`
-- The test.dictBaseline file contains the output (Shakespearean) of the dictionary baseline.
-- To evaluate BLEU: 
-  - Change working directory to code/main/
-  - Run: </br>
-  `perl multi-bleu.perl -lc ../../data/test.original.nltktok < ../../data/test.dictBaseline`
+#### Pre-trained embeddings from PTB text:
 
-#### Baseline (statistical MT)
-- Please follow instructions in "Wei Xu, Alan Ritter, William B Dolan, Ralph Grish- man, and Colin Cherry. 2012. Paraphrasing for style. In 24th International Conference on Computational Linguistics, COLING 2012."
+
+#### Pre-trained embeddings using GloVe:
 
 
 
 
-### Citation
-If you use this code or the processed data, please consider citing our work:
-```
+### Reference
+Most codes were imported and given credit to the work "Jhamtani H., Gangal V., Hovy E. and Nyberg E. Shakespearizing Modern Language Using Copy-Enriched Sequence to Sequence Models" Workshop on Stylistic Variation, EMNLP 2017
+
+Link to original repository:[click here](https://github.com/harsh19/Shakespearizing-Modern-English)
+
+'''
 @article{jhamtani2017shakespearizing,
   title={Shakespearizing Modern Language Using Copy-Enriched Sequence-to-Sequence Models},
   author={Jhamtani, Harsh and Gangal, Varun and Hovy, Eduard and Nyberg, Eric},
@@ -70,6 +69,4 @@ If you use this code or the processed data, please consider citing our work:
   pages={10},
   year={2017}
 }
-```
-
-Additionally, if you use the data, please consder citing "Wei Xu, Alan Ritter, William B Dolan, Ralph Grish- man, and Colin Cherry. 2012. Paraphrasing for style. In 24th International Conference on Computational Linguistics, COLING 2012."
+'''
