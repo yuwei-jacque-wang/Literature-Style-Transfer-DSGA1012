@@ -35,7 +35,8 @@ Our  dataset is a collection of sentences of the literature A Tale of Two Cities
 - Create a new directory named 'tmp'
 - Run: </br>
 `python mt_main.py preprocessing` </br>
-**You need to run pre-processing before running any models below**
+
+*You need to run pre-processing before running any models below*
 
 #### Simple Seq2Seq: 
 - In code/main, open configuration.py: </br>
