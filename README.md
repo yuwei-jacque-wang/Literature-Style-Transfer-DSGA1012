@@ -21,8 +21,9 @@ Our  dataset is a collection of sentences of the literature A Tale of Two Cities
 
 
 ### Preprocessing: 
- We clean the data by removing blanks at end of paragraphs, deleting empty lines etc. We split the paragraphs into sentences, then filter paragraphs with different number of sentences in two versions of the text as well as sentence that exceeds certain length. To check complete text after initial cleaning, click: [original](https://github.com/yuwei-jacque-wang/Literature-Style-Transfer-DSGA1012/blob/master/data/original_all_cleaned.txt) [modern](https://github.com/yuwei-jacque-wang/Literature-Style-Transfer-DSGA1012/blob/master/data/modern_all_cleaned.txt)
-
+ We clean the data by removing blanks at end of paragraphs, deleting empty lines etc. We split the paragraphs into sentences, then filter paragraphs with different number of sentences in two versions of the text as well as sentence that exceeds certain length. 
+ - To check complete text after initial cleaning, click: [original](https://github.com/yuwei-jacque-wang/Literature-Style-Transfer-DSGA1012/blob/master/data/original_all_cleaned.txt) [modern](https://github.com/yuwei-jacque-wang/Literature-Style-Transfer-DSGA1012/blob/master/data/modern_all_cleaned.txt)
+- To check splited and filtered sentence paris, click: [original](https://github.com/yuwei-jacque-wang/Literature-Style-Transfer-DSGA1012/blob/master/data/two_cities_original_sentence.txt) [modern](https://github.com/yuwei-jacque-wang/Literature-Style-Transfer-DSGA1012/blob/master/data/two_cities_modern_sentence.txt)
 
 ### Instructions to run:
 #### Baseline model - Simple Seq2Seq: 
