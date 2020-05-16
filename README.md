@@ -6,9 +6,12 @@ This is code implementation of the final project of DS-GA 1012:
 Text-style Transformation from 19th-Century Literature to Modern Language
 Yuwei Wang, Tianshu Chu, Jiarui Tang, Chutang Luo
 ```
+In addition to collaborators, we would like to sincerely thank our professor [Sam Bowman](https://cims.nyu.edu/~sbowman/) for valuable advice and guidance.
+
+The complete project report can be found [here](https://github.com/yuwei-jacque-wang/Literature-Style-Transfer-DSGA1012/blob/master/Final%20Report.pdf)
 
 ### Introduction
-In this work, we propose a Seq2Seq model by using Pointer Sentinel and pre-training embeddings with external text of PTB,which can effectively transform writing style of the literature the literature A Tale of Two Cities to modern English style.
+In this project, we propose a Seq2Seq model by using Pointer Sentinel and pre-training embeddings to effectively transform writing style of the classical literature to plain English. We also introduce a new parellel text set from A Tale of Two Cities by Charles Dickens.
 
 
 ### Requirements
