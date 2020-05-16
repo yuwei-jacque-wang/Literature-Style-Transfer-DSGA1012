@@ -26,10 +26,18 @@ Our  dataset is a collection of sentences of the literature A Tale of Two Cities
 - To check splited and filtered sentence paris, click: [original](https://github.com/yuwei-jacque-wang/Literature-Style-Transfer-DSGA1012/blob/master/data/two_cities_original_sentence.txt) [modern](https://github.com/yuwei-jacque-wang/Literature-Style-Transfer-DSGA1012/blob/master/data/two_cities_modern_sentence.txt)
 
 ### Instructions to run:
-#### Baseline model - Simple Seq2Seq: 
-- First run pre-processing
+
+#### Pre-processing:
 - Change working directory to code/main/
+- Create a new directory named 'tmp'
 - Run: </br>
+`python mt_main.py preprocessing` </br>
+**You need to run pre-processing before running any models below**
+
+#### Simple Seq2Seq: 
+- In code/main, open configuration.py </br>:
+ - change line 11 to `use_pointer=False`
+- run: </br>
 `python mt_main.py train 10 seq2seq` </br>
 For inference: </br>
 - Change working directory to code/main/
@@ -37,20 +45,33 @@ For inference: </br>
 `python mt_main.py inference tmp/seq2seq5.ckpt greedy` </br>
 
 #### Pointer model: 
-- First run pre-processing
-- Change working directory to code/main/
+- In code/main, open configuration.py </br>:
+ - change line 11 to `use_pointer=True`
+- run: </br>
 - `python mt_main.py train 10 pointer_model` </br>
 For inference: </br>
 - Change working directory to code/main/
 - `python mt_main.py inference tmp/pointer_model7.ckpt greedy` </br>
 
-
 #### Pre-trained embeddings from PTB text:
-
+- In code/main, open configuration.py </br>:
+ - change line 19 to:
+   `pretrained_embeddings_path = data_dir + "embeddings/retrofitted_external_192_startend.p"`
+- Then use same commands as before for running model and testing
 
 #### Pre-trained embeddings using GloVe:
+- Change directory to data/embeddings, follow instruction in [GloVe_Embeddings.ipynb](https://github.com/yuwei-jacque-wang/Literature-Style-Transfer-DSGA1012/blob/master/data/embeddings/GloVe_Embedding.ipynb) to create GloVe embeddings
+- Change directory back to code/main, open configuration.py </br>:
+ - change line 19 to:
+   `pretrained_embeddings_path = data_dir + "embeddings/glove.p"`
+- Then use same commands as before for running model and testing
 
-
+#### Tune hyperparameters:
+- In code/main.configuration.py, change the following options:
+ - max_input_seq_length & max_output_seq_length
+ - max_vocab_size
+ - lstm_cell_size & embeddings_dim (need to use new embeddings if you change this option)
+ - use_sentinel_loss (for Pointer model)
 
 
 ### Reference
@@ -58,7 +79,7 @@ Most codes were imported and given credit to the work "Jhamtani H., Gangal V., H
 
 Link to original repository:[click here](https://github.com/harsh19/Shakespearizing-Modern-English)
 
-'''
+```
 @article{jhamtani2017shakespearizing,
   title={Shakespearizing Modern Language Using Copy-Enriched Sequence-to-Sequence Models},
   author={Jhamtani, Harsh and Gangal, Varun and Hovy, Eduard and Nyberg, Eric},
@@ -67,4 +88,4 @@ Link to original repository:[click here](https://github.com/harsh19/Shakespeariz
   pages={10},
   year={2017}
 }
-'''
+```
