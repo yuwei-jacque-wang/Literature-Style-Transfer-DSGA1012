@@ -1,6 +1,5 @@
 # Literature Style Transfer
 
-# Text-style Transformation from 19th-Century Literature to Modern Language
 
 This is code implementation of the final project of DS-GA 1012:
 ```
