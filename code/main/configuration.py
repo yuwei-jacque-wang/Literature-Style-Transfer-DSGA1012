@@ -16,7 +16,7 @@ embeddings_dim = 192
 use_reverse_encoder=True
 share_encoder_decoder_embeddings=True
 use_pretrained_embeddings = True
-pretrained_embeddings_path = data_dir + "embeddings/retrofitted_external_192_startend.p"
+pretrained_embeddings_path = data_dir + "embeddings/noConstraints_192_startend.p"
 pretrained_embeddings_are_trainable = False  
 use_additional_info_from_pretrained_embeddings = True # if some word is not in training data set but is there in pretrained embeddings: mark True to add such words also. Otherwise mark False
 
