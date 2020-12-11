@@ -1,7 +1,7 @@
 # Literature Style Transfer
 
 
-This is code implementation of the final project of DS-GA 1012:
+This is code implementation of the final project of NYU DS-GA 1012 (Natural Language Understanding and Computational Semantics):
 ```
 Text-style Transformation from 19th-Century Literature to Modern Language
 Yuwei Wang, Tianshu Chu, Jiarui Tang, Chutang Luo
